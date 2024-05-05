@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_button">Default button</string>
+    <string name="text_button">Text button</string>
+    <string name="disabled_text_button">Disabled text button</string>
+    <string name="disabled_text_button_with_icon">Disabled text button with icon</string>
+    <string name="text_button_with_icon">Text button with icon</string>
+    <string name="primary_button">Primary button</string>
+    <string name="disabled_primary">Disabled primary button</string>
+    <string name="disabled_primary_with_icon">Disabled primary button with icon</string>
+    <string name="primary_with_icon">Primary button with icon</string>
+    <string name="secondary_button">Secondary button</string>
+    <string name="disabled_secondary">Disabled secondary button</string>
+    <string name="disabled_secondary_with_icon">Disabled secondary button with icon</string>
+    <string name="secondary_with_icon">Secondary button with icon</string>
+    <string name="tab_typo_title">Typography</string>
+    <string name="tab_button_title">Buttons</string>
+</resources>
