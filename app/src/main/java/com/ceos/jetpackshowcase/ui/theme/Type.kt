@@ -1,12 +1,20 @@
 package com.ceos.jetpackshowcase.ui.theme
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
 val typography = Typography(
+    headlineLarge = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 32.sp,
+        letterSpacing = 0.sp
+    ),
     headlineSmall = TextStyle(
         fontWeight = FontWeight.SemiBold,
         fontSize = 24.sp,
@@ -38,3 +46,9 @@ val typography = Typography(
         letterSpacing = 0.5.sp
     )
 )
+
+val TextStyle.secondary: TextStyle
+    @Composable
+    get() {
+        return this.copy(color = MaterialTheme.colorScheme.secondary)
+    }
