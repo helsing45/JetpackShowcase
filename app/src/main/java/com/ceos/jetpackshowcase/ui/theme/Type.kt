@@ -52,3 +52,9 @@ val TextStyle.secondary: TextStyle
     get() {
         return this.copy(color = MaterialTheme.colorScheme.secondary)
     }
+
+val TextStyle.error: TextStyle
+    @Composable
+    get() {
+        return this.copy(color = MaterialTheme.colorScheme.error)
+    }

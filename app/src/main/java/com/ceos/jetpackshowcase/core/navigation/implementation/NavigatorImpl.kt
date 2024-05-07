@@ -1,8 +1,8 @@
-package com.ceos.jetpackshowcase.core.di.navigation.implementation
+package com.ceos.jetpackshowcase.core.navigation.implementation
 
 import androidx.navigation.NavOptionsBuilder
-import com.ceos.jetpackshowcase.core.di.navigation.NavigationEvent
-import com.ceos.jetpackshowcase.core.di.navigation.Navigator
+import com.ceos.jetpackshowcase.core.navigation.NavigationEvent
+import com.ceos.jetpackshowcase.core.navigation.Navigator
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 

@@ -1,4 +1,4 @@
-package com.ceos.jetpackshowcase.core.di.navigation
+package com.ceos.jetpackshowcase.core.navigation
 
 object Routes {
     const val AUTHENTICATION_GRAPH = "auth_graph"

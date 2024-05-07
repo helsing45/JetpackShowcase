@@ -2,7 +2,7 @@ package com.ceos.jetpack_ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Check
@@ -20,7 +20,7 @@ import com.ceos.jetpack_ui.components.TextButton
 @Composable
 fun ButtonsDemoScreen() {
     val buttonModifier = Modifier.width(350.dp)
-    Column(modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface), horizontalAlignment = Alignment.CenterHorizontally) {
         PrimaryButton(
             modifier = buttonModifier,
             text = stringResource(id = R.string.primary_button)
@@ -39,6 +39,13 @@ fun ButtonsDemoScreen() {
             modifier = buttonModifier,
             text = stringResource(id = R.string.disabled_primary_with_icon),
             enabled = false,
+            icon = Icons.Outlined.Check
+        ) {}
+        PrimaryButton(
+            modifier = buttonModifier,
+            text = stringResource(id = R.string.loading_primary_button),
+            enabled = false,
+            isLoading = true,
             icon = Icons.Outlined.Check
         ) {}
 
@@ -62,6 +69,13 @@ fun ButtonsDemoScreen() {
             enabled = false,
             icon = Icons.Outlined.Check
         ) {}
+        SecondaryButton(
+            modifier = buttonModifier,
+            text = stringResource(id = R.string.loading_secondary_button),
+            enabled = false,
+            isLoading = true,
+            icon = Icons.Outlined.Check
+        ) {}
 
         TextButton(
             modifier = buttonModifier,
@@ -83,6 +97,15 @@ fun ButtonsDemoScreen() {
             enabled = false,
             icon = Icons.Outlined.Check
         ) {}
+
+        TextButton(
+            modifier = buttonModifier,
+            text = stringResource(id = R.string.loading_text_button),
+            enabled = false,
+            isLoading = true,
+            icon = Icons.Outlined.Check
+        ) {}
+
 
     }
 

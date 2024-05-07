@@ -1,4 +1,4 @@
-package com.ceos.jetpackshowcase.authentification.presentation.screens
+package com.ceos.jetpackshowcase.authentification.presentation.screens.landing
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

@@ -1,8 +1,8 @@
-package com.ceos.jetpackshowcase.authentification.domain
+package com.ceos.jetpackshowcase.authentification.presentation.screens.landing
 
 import androidx.lifecycle.ViewModel
-import com.ceos.jetpackshowcase.core.di.navigation.Navigator
-import com.ceos.jetpackshowcase.core.di.navigation.Routes
+import com.ceos.jetpackshowcase.core.navigation.Navigator
+import com.ceos.jetpackshowcase.core.navigation.Routes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

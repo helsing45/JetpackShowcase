@@ -1,4 +1,4 @@
-package com.ceos.jetpackshowcase.core.di.navigation
+package com.ceos.jetpackshowcase.core.navigation
 
 import android.content.Intent
 import androidx.navigation.NavOptionsBuilder

@@ -9,19 +9,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 
 @Composable
 fun BlankScreen(
     text: String,
-    color: Color
+    color: Color,
+    testTag: String? = null
 ) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color),
+            .background(color).testTag(testTag.orEmpty()),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = text, style = MaterialTheme.typography.headlineLarge)
+        Text(
+            text = text,
+            style = MaterialTheme.typography.headlineLarge
+        )
     }
 
 }

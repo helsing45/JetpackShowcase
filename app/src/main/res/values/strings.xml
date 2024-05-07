@@ -11,4 +11,6 @@
     <string name="welcome_back_subtitle">Log in to continue</string>
     <string name="enter_email_placeholder">Enter Email</string>
     <string name="password_placeholder">Enter Password</string>
+    <string name="login_error_invalid_credential">Bad credentials</string>
+    <string name="unkown_error">Unexpected error</string>
 </resources>

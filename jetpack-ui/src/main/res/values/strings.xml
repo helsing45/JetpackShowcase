@@ -15,4 +15,9 @@
     <string name="secondary_with_icon">Secondary button with icon</string>
     <string name="tab_typo_title">Typography</string>
     <string name="tab_button_title">Buttons</string>
+    <string name="loading_primary_button">Loading primary button</string>
+    <string name="loading_secondary_button">Loading secondary button</string>
+    <string name="loading_text_button">Loading text button</string>
+    <string name="a11y_hide_password">Hide password</string>
+    <string name="a11y_show_password">Show password</string>
 </resources>

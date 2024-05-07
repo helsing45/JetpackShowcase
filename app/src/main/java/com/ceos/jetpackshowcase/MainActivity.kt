@@ -11,11 +11,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.ceos.jetpackshowcase.core.di.navigation.NavigationEvent
-import com.ceos.jetpackshowcase.core.di.navigation.Navigator
-import com.ceos.jetpackshowcase.core.di.navigation.Routes
-import com.ceos.jetpackshowcase.core.di.navigation.graphs.authenticationNavGraph
-import com.ceos.jetpackshowcase.core.di.navigation.graphs.mainNavGraph
+import com.ceos.jetpackshowcase.core.navigation.NavigationEvent
+import com.ceos.jetpackshowcase.core.navigation.Navigator
+import com.ceos.jetpackshowcase.core.navigation.Routes
+import com.ceos.jetpackshowcase.core.navigation.graphs.authenticationNavGraph
+import com.ceos.jetpackshowcase.core.navigation.graphs.mainNavGraph
 import com.ceos.jetpackshowcase.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
