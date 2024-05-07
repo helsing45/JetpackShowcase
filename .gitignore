@@ -30,3 +30,5 @@ local.properties
 
 buildSrc/.gradle
 buildSrc/build
+
+*/google-services.json
