@@ -76,7 +76,7 @@ class LoginScreenKtTest {
         composeRule.onNodeWithTag("email_input").performTextInput("test@gmail.com")
         composeRule.onNodeWithTag("password_input").performTextInput("password")
         composeRule.onNodeWithTag("login_button").assertIsEnabled().performClick()
-        composeRule.onNodeWithTag("home_container").assertIsDisplayed()
+        composeRule.onNodeWithTag("BottomNavigationBar").assertIsDisplayed()
     }
 
     @Test

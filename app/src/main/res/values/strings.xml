@@ -13,4 +13,7 @@
     <string name="password_placeholder">Enter Password</string>
     <string name="login_error_invalid_credential">Bad credentials</string>
     <string name="unkown_error">Unexpected error</string>
+    <string name="bottom_nav_parks_label">Parks</string>
+    <string name="bottom_nav_profile_label">Profile</string>
+    <string name="bottom_nav_news_label">News</string>
 </resources>
