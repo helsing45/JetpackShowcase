@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.google.services)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -41,6 +42,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -54,6 +56,14 @@ android {
 hilt {
     enableAggregatingTask = false
 }
+
+secrets {
+    propertiesFileName = "secrets.properties"
+    defaultPropertiesFileName = "local.defaults.properties"
+    ignoreList.add("keyToIgnore")
+    ignoreList.add("sdk.*")
+}
+
 
 dependencies {
 
@@ -79,8 +89,6 @@ dependencies {
     testImplementation(libs.hilt.android.testing)
     // ...with Kotlin.
     kaptTest(libs.hilt.android.compiler.test)
-
-
     // For instrumented tests.
     androidTestImplementation(libs.hilt.android.testing)
     // ...with Kotlin.
@@ -94,5 +102,7 @@ dependencies {
     implementation(project(":jetpack-ui"))
 
     debugImplementation(libs.ui.test.manifest)
+
+    implementation(libs.google.map)
 
 }
