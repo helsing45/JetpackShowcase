@@ -32,4 +32,4 @@ buildSrc/.gradle
 buildSrc/build
 
 */google-services.json
-/secrets.properties
+./secrets.properties
