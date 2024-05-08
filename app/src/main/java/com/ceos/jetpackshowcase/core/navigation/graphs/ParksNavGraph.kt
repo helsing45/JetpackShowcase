@@ -1,5 +1,6 @@
 package com.ceos.jetpackshowcase.core.navigation.graphs
 
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
@@ -12,7 +13,7 @@ fun NavGraphBuilder.parkNavGraph(
    navigation(startDestination = Routes.PARKS_SCREEN, route = route) {
 
        composable(Routes.PARKS_SCREEN){
-           ParksScreen()
+           ParksScreen(hiltViewModel())
        }
    }
 }

@@ -1,13 +1,14 @@
 package com.ceos.jetpackshowcase.authentification.domain
 
 import androidx.compose.runtime.mutableStateOf
+import com.ceos.jetpackshowcase.authentification.data.Authenticator
 import com.ceos.jetpackshowcase.authentification.data.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
-class AuthenticatorImpl :Authenticator{
+class AuthenticatorImpl : Authenticator {
     private val currentUser = mutableStateOf<User?>(null)
 
     private val auth: FirebaseAuth by lazy {

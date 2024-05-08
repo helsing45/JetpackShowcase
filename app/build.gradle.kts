@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     alias(libs.plugins.hilt)
     alias(libs.plugins.google.services)
+    id("kotlinx-serialization")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
@@ -104,5 +105,10 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
 
     implementation(libs.google.map)
+
+    implementation(libs.kotlinx.serialization.json)
+    implementation (libs.retrofit)
+    implementation (libs.retrofit.serialization)
+    implementation(libs.okhttp)
 
 }
