@@ -22,9 +22,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.ceos.jetpack_ui.components.HSpacer
 import com.ceos.jetpack_ui.components.PrimaryButton
 import com.ceos.jetpack_ui.components.SecondaryButton
+import com.ceos.jetpack_ui.components.VSpacer
 import com.ceos.jetpackshowcase.R
 import com.ceos.jetpackshowcase.ui.theme.AppTheme
 import com.ceos.jetpackshowcase.ui.theme.spacings
@@ -84,13 +84,13 @@ fun LandingScreen(onLoginClicked: () -> Unit = {},
                                     text = stringResource(id = R.string.login_button),
                                     onClick = onLoginClicked
                                 )
-                                HSpacer(MaterialTheme.spacings.mediumSpacing)
+                                VSpacer(MaterialTheme.spacings.mediumSpacing)
                                 SecondaryButton(
                                     modifier = buttonModifier,
                                     text = stringResource(id = R.string.sign_up_button),
                                     onClick = onSignUpClicked
                                 )
-                                HSpacer(height = MaterialTheme.spacings.largeSpacing)
+                                VSpacer(MaterialTheme.spacings.largeSpacing)
                             }
                         })
                 })

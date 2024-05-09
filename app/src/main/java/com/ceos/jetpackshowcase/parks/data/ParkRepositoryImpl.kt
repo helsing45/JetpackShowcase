@@ -1,7 +1,7 @@
 package com.ceos.jetpackshowcase.parks.data
 
-import android.util.Log
 import com.ceos.jetpackshowcase.core.DispatcherProvider
+import com.ceos.jetpackshowcase.core.logger.Logger
 import com.ceos.jetpackshowcase.error_handling.UnexpectedNullWhileMappingError
 import com.ceos.jetpackshowcase.parks.data.local.ParkDao
 import com.ceos.jetpackshowcase.parks.data.mappers.toDomain
@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class ParkRepositoryImpl(
+    private val logger: Logger,
     private val dispatcherProvider: DispatcherProvider,
     private val localDataSource: ParkDao,
     private val remoteDataSource: ParksApi
@@ -32,14 +33,17 @@ class ParkRepositoryImpl(
         CoroutineScope(dispatcherProvider.io()).launch {
             try {
                 val result = remoteDataSource.getParks()
-                val entities = result.value?.map { it.toEntity() } ?: emptyList()
+                val entities = result.value?.mapNotNull {
+                    try {
+                        it.toEntity()
+                    } catch (e: UnexpectedNullWhileMappingError) {
+                        logger.e(e, "Failed to map park: ${e.message}")
+                        null
+                    }
+                } ?: emptyList()
                 localDataSource.upsert(*entities.toTypedArray())
             } catch (e: Exception) {
-                if (e is UnexpectedNullWhileMappingError) {
-                    Log.e("ParkRepositoryImpl", "Failed to map park: ${e.message}", e)
-                } else {
-                    Log.e("ParkRepositoryImpl", "Failed to fetch parks", e)
-                }
+                logger.e(e, "Failed to fetch parks")
             }
         }
     }

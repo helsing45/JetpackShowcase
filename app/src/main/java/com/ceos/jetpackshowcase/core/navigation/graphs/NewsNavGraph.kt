@@ -1,19 +1,19 @@
 package com.ceos.jetpackshowcase.core.navigation.graphs
 
-import androidx.compose.ui.graphics.Color
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.ceos.jetpack_ui.screens.BlankScreen
 import com.ceos.jetpackshowcase.core.navigation.Routes
+import com.ceos.jetpackshowcase.events.presentation.screens.events.EventsScreen
 
-fun NavGraphBuilder.newsNavGraph(
+fun NavGraphBuilder.eventsNavGraph(
     route: String
 ) {
-   navigation(startDestination = Routes.NEWS_SCREEN, route = route) {
+   navigation(startDestination = Routes.EVENTS_SCREEN, route = route) {
        
-       composable(Routes.NEWS_SCREEN){
-           BlankScreen(text = "News", color = Color.Cyan)
+       composable(Routes.EVENTS_SCREEN){
+           EventsScreen(vm = hiltViewModel())
        }
    } 
 }

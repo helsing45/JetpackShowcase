@@ -35,27 +35,46 @@ class ParkMappersTest {
         assertThat(entity.description).isNull()
     }
 
-    @Test
-    fun `when remote dto has a null lat then is mapped has NaN`() {
+
+    @Test(expected = UnexpectedNullWhileMappingError::class)
+    fun `when remote dto has a null latitute then unexpected null error is thrown`() {
         val remoteDto = Factories.defaultParkDto(
             latitude = null
         )
 
-        val entity = remoteDto.toEntity()
-
-        assertThat(entity.lat.isNaN()).isTrue()
+        remoteDto.toEntity()
     }
 
-    @Test
-    fun `when remote dto has a null lng then is mapped as NaN`() {
+    @Test(expected = UnexpectedNullWhileMappingError::class)
+    fun `when remote dto has a empty latitute then unexpected null error is thrown`() {
+        val remoteDto = Factories.defaultParkDto(
+            latitude = ""
+        )
+
+        remoteDto.toEntity()
+    }
+
+
+
+    @Test(expected = UnexpectedNullWhileMappingError::class)
+    fun `when remote dto has a null longitude then unexpected null error is thrown`() {
         val remoteDto = Factories.defaultParkDto(
             longitude = null
         )
 
-        val entity = remoteDto.toEntity()
-
-        assertThat(entity.lng.isNaN()).isTrue()
+        remoteDto.toEntity()
     }
+
+
+    @Test(expected = UnexpectedNullWhileMappingError::class)
+    fun `when remote dto has a empty longitude then unexpected null error is thrown`() {
+        val remoteDto = Factories.defaultParkDto(
+            longitude = ""
+        )
+
+        remoteDto.toEntity()
+    }
+
 
     @Test
     fun `when remote is well formatted, then entity is well mapped`() {

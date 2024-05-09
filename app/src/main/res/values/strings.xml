@@ -15,5 +15,5 @@
     <string name="unkown_error">Unexpected error</string>
     <string name="bottom_nav_parks_label">Parks</string>
     <string name="bottom_nav_profile_label">Profile</string>
-    <string name="bottom_nav_news_label">News</string>
+    <string name="bottom_nav_events_label">Events</string>
 </resources>

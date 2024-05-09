@@ -17,11 +17,11 @@ enum class NavigationItems(
         R.drawable.ic_filled_parks,
         R.string.bottom_nav_parks_label
     ),
-    NEWS(
-        Routes.NEWS_SCREEN,
-        R.drawable.ic_outline_news,
-        R.drawable.ic_filled_news,
-        R.string.bottom_nav_news_label
+    EVENTS(
+        Routes.EVENTS_SCREEN,
+        R.drawable.ic_outline_events,
+        R.drawable.ic_filled_events,
+        R.string.bottom_nav_events_label
     ),
     PROFILE(
         Routes.PROFILE_SCREEN,

@@ -31,7 +31,7 @@ fun NavGraphBuilder.mainNavGraph(
             ) {
                 parkNavGraph(Routes.PARKS_GRAPH)
 
-                newsNavGraph(Routes.NEWS_GRAPH)
+                eventsNavGraph(Routes.EVENTS_GRAPH)
 
                 profileNavGraph(Routes.PROFILE_GRAPH)
             }

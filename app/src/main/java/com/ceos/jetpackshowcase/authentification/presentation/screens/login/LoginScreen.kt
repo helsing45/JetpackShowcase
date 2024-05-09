@@ -35,11 +35,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ceos.jetpack_ui.components.HSpacer
 import com.ceos.jetpack_ui.components.PasswordInput
 import com.ceos.jetpack_ui.components.PrimaryButton
 import com.ceos.jetpack_ui.components.TextButton
 import com.ceos.jetpack_ui.components.TextInput
+import com.ceos.jetpack_ui.components.VSpacer
 import com.ceos.jetpackshowcase.R
 import com.ceos.jetpackshowcase.authentification.domain.AuthenticationError
 import com.ceos.jetpackshowcase.ui.theme.error
@@ -104,17 +104,17 @@ private fun LoginContentScreen(
             )
             {
                 item {
-                    HSpacer(height = 60.dp)
+                    VSpacer(60.dp)
                     Text(
                         stringResource(id = R.string.welcome_back_label),
                         style = MaterialTheme.typography.headlineMedium
                     )
-                    HSpacer(height = MaterialTheme.spacings.smallSpacing)
+                    VSpacer( MaterialTheme.spacings.smallSpacing)
                     Text(
                         stringResource(id = R.string.welcome_back_subtitle),
                         style = MaterialTheme.typography.bodyMedium.secondary
                     )
-                    HSpacer(height = MaterialTheme.spacings.mediumSpacing)
+                    VSpacer(MaterialTheme.spacings.mediumSpacing)
                     TextInput(
                         value = email,
                         onValueChange = onEmailChanged,
@@ -130,7 +130,7 @@ private fun LoginContentScreen(
                             imeAction = ImeAction.Next
                         ),
                     )
-                    HSpacer(MaterialTheme.spacings.default)
+                    VSpacer(MaterialTheme.spacings.default)
                     PasswordInput(
                         value = password,
                         onValueChange = onPasswordChanged,
@@ -144,19 +144,19 @@ private fun LoginContentScreen(
                         }
                         )
                     )
-                    HSpacer(MaterialTheme.spacings.smallSpacing)
+                    VSpacer(MaterialTheme.spacings.smallSpacing)
                     Text(
                         modifier = Modifier.fillMaxWidth().testTag("error_text") ,
                         textAlign = TextAlign.End,
                         text = error.orEmpty(),
                         style = MaterialTheme.typography.labelLarge.error
                     )
-                    HSpacer(MaterialTheme.spacings.default)
+                    VSpacer(MaterialTheme.spacings.default)
                     TextButton(
                         text = stringResource(id = R.string.forgot_password_label),
                         onClick = onPasswordForgetClicked
                     )
-                    HSpacer(MaterialTheme.spacings.smallSpacing)
+                    VSpacer(MaterialTheme.spacings.smallSpacing)
                     PrimaryButton(
                         modifier = Modifier.testTag("login_button"),
                         isLoading = isLoading,
@@ -164,7 +164,7 @@ private fun LoginContentScreen(
                         enabled = isFormCompleted,
                         onClick = onSubmitCredential
                     )
-                    HSpacer(MaterialTheme.spacings.default)
+                    VSpacer(MaterialTheme.spacings.default)
                     Text(
                         buildAnnotatedString {
                             withStyle(
@@ -187,7 +187,7 @@ private fun LoginContentScreen(
                             }
                         }
                     )
-                    HSpacer(MaterialTheme.spacings.default)
+                    VSpacer(MaterialTheme.spacings.default)
                 }
             }
             LaunchedEffect(key1 = true) {

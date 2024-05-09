@@ -9,8 +9,8 @@ object Routes {
     const val MAIN_GRAPH = "main_graph"
     const val PARKS_GRAPH = "park_graph"
     const val PARKS_SCREEN = "parks"
-    const val NEWS_GRAPH = "news_graph"
-    const val NEWS_SCREEN = "news"
+    const val EVENTS_GRAPH = "events_graph"
+    const val EVENTS_SCREEN = "events"
     const val PROFILE_GRAPH = "profile_graph"
     const val PROFILE_SCREEN = "profile"
 

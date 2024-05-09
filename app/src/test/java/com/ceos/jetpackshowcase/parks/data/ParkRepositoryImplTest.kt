@@ -6,7 +6,6 @@ import com.ceos.jetpackshowcase.Factories.Companion.defaultParkDto
 import com.ceos.jetpackshowcase.Factories.Companion.defaultResultDto
 import com.ceos.jetpackshowcase.parks.data.local.MockParkDao
 import com.ceos.jetpackshowcase.parks.data.local.entities.ParkEntity
-import com.ceos.jetpackshowcase.parks.data.mappers.ParkMappers
 import com.ceos.jetpackshowcase.parks.data.remote.ParksApi
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -29,10 +28,10 @@ class ParkRepositoryImplTest {
     private val remoteDataSource = mockk<ParksApi>()
 
     private val subject = ParkRepositoryImpl(
+        logger = mockk(relaxed = true),
         coroutineTestRule.testDispatcherProvider,
         localDataSource = localDataSource,
         remoteDataSource = remoteDataSource,
-        mapper = ParkMappers()
     )
 
     @After
@@ -63,6 +62,30 @@ class ParkRepositoryImplTest {
         }
 
         coVerify { localDataSource.upsert(*anyVararg<ParkEntity>()) }
+    }
+
+    @Test
+    fun `when a mapping error occurs, then fetched item is skipped`() = runTest {
+        val park1 = defaultParkDto(id = "ff006980-9fbd-40b6-b2b3-470a115fd821", name = "Park #1")
+        val park2 = defaultParkDto(id = "e6348b18-d703-4184-b32f-cabe181a68f3", name = null)
+        val inputDto = defaultResultDto(
+            value = listOf(park1, park2)
+        )
+
+        coEvery { remoteDataSource.getParks() } coAnswers {
+            delay(100)
+            inputDto
+        }
+
+        subject.getParks().test {
+            val one = awaitItem()
+            val two = awaitItem()
+            assertThat(one).isEmpty()
+            assertThat(two).isNotNull
+            assertThat(two.size).isEqualTo(inputDto.value!!.size - 1)
+            assertThat(two[0].id).isEqualTo(park1.id)
+        }
+
     }
 
 }

@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
 
                 NavHost(
                     navController = baseNavController,
-                    startDestination = Routes.AUTHENTICATION_GRAPH
+                    startDestination = Routes.MAIN_GRAPH
                 ) {
                     authenticationNavGraph(Routes.AUTHENTICATION_GRAPH) {
                         currentNavController = baseNavController

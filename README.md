@@ -56,8 +56,10 @@ Uses concepts of the notorious Uncle Bob's architecture called [Clean Architectu
 - [ ] Test coverage
 - [ ] Ktlint
 - [X] Use Jetpack Compose
-- [ ] Pagination
+- [X] Pagination
 - [ ] Bottom sheet
 - [ ] Vector animation
 - [ ] State handling
 - [ ] Shared element transition
+- [ ] TypeConverter
+- [ ] Modularization

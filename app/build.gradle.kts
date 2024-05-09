@@ -67,62 +67,68 @@ secrets {
 
 
 dependencies {
-
+    //AndroidX
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.common.ktx)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.runner)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    testImplementation(libs.robolectric)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //Hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
-
-    // For Robolectric tests.
-    testImplementation(libs.hilt.android.testing)
-    // ...with Kotlin.
-    kaptTest(libs.hilt.android.compiler.test)
-    // For instrumented tests.
-    androidTestImplementation(libs.hilt.android.testing)
-    // ...with Kotlin.
-    kaptAndroidTest(libs.hilt.compiler)
-
 
     //Auth
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
 
-    implementation(project(":jetpack-ui"))
-
-    debugImplementation(libs.ui.test.manifest)
-
+    //Map
     implementation(libs.google.map)
 
+    //Remote
     implementation(libs.kotlinx.serialization.json)
-    implementation (libs.retrofit)
-    implementation (libs.retrofit.serialization)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.serialization)
     implementation(libs.okhttp)
 
+    //Room
     implementation(libs.androidx.room.runtime)
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
+    //Paging
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.room.paging)
+
+
+    implementation(libs.richeditor.compose)
+
+    //Projects modules
+    implementation(project(":jetpack-ui"))
+
     //Testing
+    testImplementation(libs.junit)
+    testImplementation(libs.hilt.android.testing)
     testImplementation(libs.kotlinx.coroutines.test)
-
-
-    testImplementation (libs.mockk)
+    testImplementation(libs.mockk)
     testImplementation(libs.turbine)
     testImplementation(libs.assertj.core)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest)
+    // For Robolectric tests.
+    testImplementation(libs.robolectric)
+    kaptTest(libs.hilt.android.compiler.test)
+    androidTestImplementation(libs.hilt.android.testing)
+    kaptAndroidTest(libs.hilt.compiler)
+
 }
 
 

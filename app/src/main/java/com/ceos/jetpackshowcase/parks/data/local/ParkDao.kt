@@ -12,6 +12,6 @@ interface ParkDao {
     @Upsert
     fun upsert(vararg parks: ParkEntity)
 
-    @Query("SELECT * FROM park")
+    @Query("SELECT * FROM parks")
     fun getParks(): Flow<List<ParkEntity>>
 }
