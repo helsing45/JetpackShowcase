@@ -2,7 +2,6 @@ package com.ceos.jetpackshowcase.parks.di
 
 import com.ceos.jetpackshowcase.BuildConfig
 import com.ceos.jetpackshowcase.core.DispatcherProvider
-import com.ceos.jetpackshowcase.core.retrofit.interceptors.headerInterceptorWith
 import com.ceos.jetpackshowcase.parks.data.ParkRepositoryImpl
 import com.ceos.jetpackshowcase.parks.data.local.ParkDao
 import com.ceos.jetpackshowcase.parks.data.mappers.ParkMapper
@@ -54,8 +53,7 @@ class ParksModule {
         ParkRepositoryImpl(
             dispatcherProvider = dispatcherProvider,
             localDataSource = dao,
-            remoteDataSource = api,
-            mapper = ParkMapper()
+            remoteDataSource = api
         )
 
 }

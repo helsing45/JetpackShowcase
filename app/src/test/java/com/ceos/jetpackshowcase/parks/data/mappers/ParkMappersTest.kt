@@ -5,16 +5,14 @@ import com.ceos.jetpackshowcase.error_handling.UnexpectedNullWhileMappingError
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class ParkMapperTest {
-    private val mapper = ParkMapper()
-
+class ParkMappersTest {
     @Test(expected = UnexpectedNullWhileMappingError::class)
     fun `when remote dto has a null id then unexpected null error is thrown`() {
         val remoteDto = Factories.defaultParkDto(
             id = null
         )
 
-        mapper.remoteToEntity(remoteDto)
+        remoteDto.toEntity()
     }
 
     @Test(expected = UnexpectedNullWhileMappingError::class)
@@ -23,7 +21,7 @@ class ParkMapperTest {
             name = null
         )
 
-        mapper.remoteToEntity(remoteDto)
+        remoteDto.toEntity()
     }
 
     @Test
@@ -32,7 +30,7 @@ class ParkMapperTest {
             description = null
         )
 
-        val entity = mapper.remoteToEntity(remoteDto)
+        val entity = remoteDto.toEntity()
 
         assertThat(entity.description).isNull()
     }
@@ -43,7 +41,7 @@ class ParkMapperTest {
             latitude = null
         )
 
-        val entity = mapper.remoteToEntity(remoteDto)
+        val entity = remoteDto.toEntity()
 
         assertThat(entity.lat.isNaN()).isTrue()
     }
@@ -54,7 +52,7 @@ class ParkMapperTest {
             longitude = null
         )
 
-        val entity = mapper.remoteToEntity(remoteDto)
+        val entity = remoteDto.toEntity()
 
         assertThat(entity.lng.isNaN()).isTrue()
     }
@@ -68,7 +66,7 @@ class ParkMapperTest {
             longitude = longitude.toString()
         )
 
-        val entity = mapper.remoteToEntity(remoteDto)
+        val entity = remoteDto.toEntity()
 
         assertThat(entity.id).isEqualTo(remoteDto.id)
         assertThat(entity.name).isEqualTo(remoteDto.name)
@@ -82,7 +80,7 @@ class ParkMapperTest {
     fun `entity fields are mapped correctly to domain fields`() {
         val entity = Factories.defaultParkEntity()
 
-        val domain = mapper.entityToDomain(entity)
+        val domain = entity.toDomain()
 
         assertThat(domain.id).isEqualTo(entity.id)
         assertThat(domain.name).isEqualTo(entity.name)

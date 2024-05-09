@@ -6,7 +6,7 @@ import com.ceos.jetpackshowcase.Factories.Companion.defaultParkDto
 import com.ceos.jetpackshowcase.Factories.Companion.defaultResultDto
 import com.ceos.jetpackshowcase.parks.data.local.MockParkDao
 import com.ceos.jetpackshowcase.parks.data.local.entities.ParkEntity
-import com.ceos.jetpackshowcase.parks.data.mappers.ParkMapper
+import com.ceos.jetpackshowcase.parks.data.mappers.ParkMappers
 import com.ceos.jetpackshowcase.parks.data.remote.ParksApi
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -32,7 +32,7 @@ class ParkRepositoryImplTest {
         coroutineTestRule.testDispatcherProvider,
         localDataSource = localDataSource,
         remoteDataSource = remoteDataSource,
-        mapper = ParkMapper()
+        mapper = ParkMappers()
     )
 
     @After
