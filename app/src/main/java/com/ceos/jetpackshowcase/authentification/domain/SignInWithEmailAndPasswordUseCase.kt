@@ -1,6 +1,5 @@
 package com.ceos.jetpackshowcase.authentification.domain
 
-import com.ceos.jetpackshowcase.authentification.data.Authenticator
 import com.ceos.jetpackshowcase.authentification.domain.AuthenticationError.InvalidCredential
 import com.ceos.jetpackshowcase.authentification.domain.AuthenticationError.UnknownError
 import com.ceos.jetpackshowcase.error_handling.Outcome
@@ -12,7 +11,6 @@ import javax.inject.Inject
 class SignInWithEmailAndPasswordUseCase @Inject constructor(
     private val authenticator: Authenticator
 ) {
-
     fun signIn(email: String, password: String) = flow {
 
         try {

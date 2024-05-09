@@ -111,4 +111,18 @@ dependencies {
     implementation (libs.retrofit.serialization)
     implementation(libs.okhttp)
 
+    implementation(libs.androidx.room.runtime)
+    //noinspection KaptUsageInsteadOfKsp
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    //Testing
+    testImplementation(libs.kotlinx.coroutines.test)
+
+
+    testImplementation (libs.mockk)
+    testImplementation(libs.turbine)
+    testImplementation(libs.assertj.core)
 }
+
+

@@ -1,8 +1,11 @@
 package com.ceos.jetpackshowcase.parks.di
 
 import com.ceos.jetpackshowcase.BuildConfig
+import com.ceos.jetpackshowcase.core.DispatcherProvider
 import com.ceos.jetpackshowcase.core.retrofit.interceptors.headerInterceptorWith
 import com.ceos.jetpackshowcase.parks.data.ParkRepositoryImpl
+import com.ceos.jetpackshowcase.parks.data.local.ParkDao
+import com.ceos.jetpackshowcase.parks.data.mappers.ParkMapper
 import com.ceos.jetpackshowcase.parks.data.remote.ParksApi
 import com.ceos.jetpackshowcase.parks.domain.repositories.ParkRepository
 import dagger.Module
@@ -43,7 +46,16 @@ class ParksModule {
 
     @Provides
     @Singleton
-    fun provideParksRepository(api: ParksApi): ParkRepository = ParkRepositoryImpl(api)
-
+    fun provideParksRepository(
+        dispatcherProvider: DispatcherProvider,
+        dao: ParkDao,
+        api: ParksApi
+    ): ParkRepository =
+        ParkRepositoryImpl(
+            dispatcherProvider = dispatcherProvider,
+            localDataSource = dao,
+            remoteDataSource = api,
+            mapper = ParkMapper()
+        )
 
 }

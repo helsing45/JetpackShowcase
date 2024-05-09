@@ -1,8 +1,7 @@
-package com.ceos.jetpackshowcase.authentification.domain
+package com.ceos.jetpackshowcase.authentification.data
 
 import androidx.compose.runtime.mutableStateOf
-import com.ceos.jetpackshowcase.authentification.data.Authenticator
-import com.ceos.jetpackshowcase.authentification.data.User
+import com.ceos.jetpackshowcase.authentification.domain.Authenticator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

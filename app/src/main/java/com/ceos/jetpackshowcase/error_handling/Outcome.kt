@@ -25,10 +25,10 @@ sealed class Outcome<out R, out E : Outcome.Error> {
         }
     }
 
-    val valueOrThrow: R
+    val valueOrNull: R?
         get() {
             return when (this) {
-                is Failure -> throw Exception("Output value is null")
+                is Failure -> null
                 is Success -> value
             }
         }

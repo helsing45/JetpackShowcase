@@ -1,7 +1,7 @@
 package com.ceos.jetpackshowcase.authentification.di
 
-import com.ceos.jetpackshowcase.authentification.data.Authenticator
-import com.ceos.jetpackshowcase.authentification.domain.AuthenticatorImpl
+import com.ceos.jetpackshowcase.authentification.domain.Authenticator
+import com.ceos.jetpackshowcase.authentification.data.AuthenticatorImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

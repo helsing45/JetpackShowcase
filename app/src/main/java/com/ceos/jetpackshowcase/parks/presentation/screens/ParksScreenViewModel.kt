@@ -2,9 +2,7 @@ package com.ceos.jetpackshowcase.parks.presentation.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ceos.jetpackshowcase.error_handling.Outcome
 import com.ceos.jetpackshowcase.parks.domain.models.Park
-import com.ceos.jetpackshowcase.parks.domain.models.ParkError
 import com.ceos.jetpackshowcase.parks.domain.use_cases.FetchParksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -27,14 +25,7 @@ class ParksScreenViewModel @Inject constructor(
     fun getParks() {
         viewModelScope.launch(Dispatchers.IO) {
             fetchParksUseCase.getParks()
-                .collectLatest {
-                    when (it) {
-                        is Outcome.Failure ->
-                            handleError(it.error)
-
-                        is Outcome.Success -> updateParks(it.value)
-                    }
-                }
+                .collectLatest(::updateParks)
         }
 
     }
@@ -46,10 +37,6 @@ class ParksScreenViewModel @Inject constructor(
                 addAll(value)
             }
         }
-    }
-
-    private fun handleError(error: ParkError) {
-        //TODO: Handle Error
     }
 
 }
