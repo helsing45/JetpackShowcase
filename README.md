@@ -48,6 +48,7 @@ Uses concepts of the notorious Uncle Bob's architecture called [Clean Architectu
 * Latest Android SDK Tools and build tools.
 * [Map key](https://developers.google.com/maps/documentation/embed/get-api-key?hl=fr#create-api-keys) In secrets.properties paste MAPS_API_KEY=your key
 * [NPS api key](https://www.nps.gov/subjects/developer/get-started.htm) In secrets.properties paste NPS_API_KEY=your key
+* Login with admin@gmail.com / password
 
 ## TODO
 - [ ] CI/CD (Github Actions, Bitrise, CircleCI)
@@ -57,3 +58,6 @@ Uses concepts of the notorious Uncle Bob's architecture called [Clean Architectu
 - [X] Use Jetpack Compose
 - [ ] Pagination
 - [ ] Bottom sheet
+- [ ] Vector animation
+- [ ] State handling
+- [ ] Shared element transition
