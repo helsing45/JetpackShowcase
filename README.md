@@ -56,4 +56,4 @@ Uses concepts of the notorious Uncle Bob's architecture called [Clean Architectu
 - [ ] Ktlint
 - [X] Use Jetpack Compose
 - [ ] Pagination
-- [ ]Bottom sheet
+- [ ] Bottom sheet
